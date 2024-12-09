@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/form-style.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Form Registrasi</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form method="POST" action="form_register.php">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama" name="nama" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="nim" class="form-label">NIM</label>
+                        <input type="text" class="form-control" id="nim" name="nim" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="program_studi" class="form-label">Program Studi</label>
+                        <select class="form-select" id="program_studi" name="program_studi" required>
+                            <option selected disabled value="">Pilih Program Studi...</option>
+                            <option value="D3 Sistem Informasi">D3 Sistem Informasi</option>
+                            <option value="S1 Sistem Informasi">S1 Sistem Informasi</option>
+                            <option value="S1 Informatika">S1 Informatika</option>
+                            <option value="S1 Sains Data">S1 Sains Data</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fakultas" class="form-label">Fakultas</label>
+                        <input type="text" class="form-control" id="fakultas" name="fakultas" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cita_cita" class="form-label">Cita-Cita</label>
+                        <input type="text" class="form-control" id="cita_cita" name="cita_cita" required>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" name="submit" class="btn">Daftar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="cat-svg">
+            <img src="images/quiz-1.svg" alt="cat" />
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

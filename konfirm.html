@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Confirmation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="css/konfirm-style.css" />
+</head>
+<body>
+    <div class="main-container">
+        <div class="rectangle">
+            <div class="content">
+                <img src="images/konfirm-1.svg" alt="Happy Image" class="happy-image" />
+                <span class="yasss-jawabanmu-sudah">Yasss! Jawabanmu sudah ke-save! 🎉</span>
+                <form action="save_result.php" method="POST">
+                    <input type="hidden" name="nim" id="nim" value="<?php echo $nim; ?>" />
+                    <input type="hidden" name="nama" id="nama" value="<?php echo $nama; ?>" />
+                    <input type="hidden" name="program_studi" id="program_studi" value="<?php echo $program_studi; ?>" />
+                    <input type="hidden" name="fakultas" id="fakultas" value="<?php echo $fakultas; ?>" />
+                    <input type="hidden" name="cita_cita" id="cita_cita" value="<?php echo $cita_cita; ?>" />
+                    <input type="hidden" name="hasil_quiz" id="hasil_quiz" />
+                    <button class="frame" onclick="checkResults()" style="cursor: pointer;">
+                        <span class="cek-hasilnya">Cek Hasilnya 👉</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkResults() {
+            const score = localStorage.getItem('score');
+            let profession;
+
+            if (score >= 7 && score <= 13) {
+                profession = 'auditor_it';
+            } else if (score >= 14 && score <= 20) {
+                profession = 'application_developer';
+            } else if (score >= 21 && score <= 28) {
+                profession = 'system_analyst';
+            }
+
+            document.getElementById('hasil_quiz').value = profession;
+        }
+
+        window.onload = checkResults;
+    </script>
+</body>
+</html>
